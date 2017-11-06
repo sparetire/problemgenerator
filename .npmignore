@@ -1,0 +1,8 @@
+demo
+.npmignore
+.eslintrc.js
+.eslintignore
+.jsbeautifyrc
+.prettierrc
+.vscode
+node_modules
