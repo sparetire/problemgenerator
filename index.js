@@ -10,6 +10,8 @@ process.on('uncaughtException', err => {
 	console.error(err.stack);
 });
 
+const END_OF_LINE = process.platform == 'win32' ? '\r\n' : '\n';
+
 const argv = yargs
 	.usage(
 		`
@@ -64,10 +66,10 @@ let operandsBounds = getBounds(operandsRange),
 problemCount = parseInt(problemCount, 10);
 
 function run(ol, ou, cl, cu, pc, getOperator) {
-	console.log(chalk.blue('Enjoy it!\n'));
+	console.log(chalk.blue(`Enjoy it!${END_OF_LINE}`));
 	while (pc--) {
 		let problem = genProblem(ol, ou, cl, cu, getOperator);
-		console.log(`${problem.expression} = ${chalk.green(problem.answer)}\n`);
+		console.log(`${problem.expression} = ${chalk.green(problem.answer)}${END_OF_LINE}`);
 	}
 }
 
