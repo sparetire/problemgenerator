@@ -4,7 +4,7 @@ class Operands {
 	}
 
 	toString() {
-		return this.value.toString();
+		return this.value < 0 ? `(${this.value.toString()})` : this.value.toString();
 	}
 }
 
