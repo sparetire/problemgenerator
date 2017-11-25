@@ -66,10 +66,16 @@ let operandsBounds = getBounds(operandsRange),
 problemCount = parseInt(problemCount, 10);
 
 function run(ol, ou, cl, cu, pc, getOperator) {
+	const answers = [];
 	console.log(chalk.blue(`Enjoy it!${END_OF_LINE}`));
 	while (pc--) {
 		let problem = genProblem(ol, ou, cl, cu, getOperator);
-		console.log(`${problem.expression} = ${chalk.green(problem.answer)}${END_OF_LINE}`);
+		answers.push(problem.answer);
+		console.log(`${problem.expression} =${END_OF_LINE}`);
+	}
+	console.log(chalk.blue(`Answers:${END_OF_LINE}`));
+	for (let k in answers) {
+		console.log(`${chalk.green(answers[k])}${END_OF_LINE}`);
 	}
 }
 
