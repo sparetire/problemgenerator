@@ -10,7 +10,7 @@ process.on('uncaughtException', err => {
 	console.error(err.stack);
 });
 
-const END_OF_LINE = process.platform == 'win32' ? '\r\n' : '\n';
+const END_OF_LINE = process.platform == 'win32' ? '\r' : '\n';
 
 const argv = yargs
 	.usage(
